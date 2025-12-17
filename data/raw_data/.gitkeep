@@ -1,0 +1,7 @@
+# Raw Data
+
+Place your raw centroid tracking CSV files here.
+
+Files output from `Centroid tracker updated.py` should go in this directory.
+
+See [../README.md](../README.md) for file naming conventions and organization tips.
