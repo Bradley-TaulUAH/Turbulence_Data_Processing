@@ -1,0 +1,7 @@
+# Processed Data
+
+Place your processed scintillation index CSV files here.
+
+Files output from `Combined centroid and intensity.py` should go in this directory.
+
+See [../README.md](../README.md) for file naming conventions and organization tips.

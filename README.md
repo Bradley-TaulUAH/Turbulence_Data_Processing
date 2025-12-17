@@ -115,6 +115,16 @@ See [QUICKSTART.md](QUICKSTART.md) for a complete tutorial. Basic workflow:
 - Geometric wander can contribute 30-80% of measured SI in fixed aperture measurements
 - Thrust/turbulence sources typically increase SI by 50-200%
 
+## 📂 Data Repository
+
+This repository includes a `data/` directory for storing experimental results:
+
+- **raw_data/** - Centroid tracking CSV outputs
+- **processed_data/** - Scintillation index calculation results  
+- **example_data/** - Sample datasets for testing
+
+**See [DATA_GUIDE.md](DATA_GUIDE.md)** for complete instructions on how to add your experimental data files to the repository. You can add CSV files directly without zipping them.
+
 ## 📁 Repository Structure
 
 ```
@@ -122,10 +132,16 @@ Turbulence_Data_Processing/
 ├── README.md                           # This file
 ├── QUICKSTART.md                       # Detailed tutorial
 ├── ENVIRONMENT_SETUP.md                # Installation guide
+├── DATA_GUIDE.md                       # Guide for adding experimental data
 ├── requirements.txt                    # Python dependencies
 ├── Centroid tracker updated.py         # Step 1: Track laser spot
 ├── Combined centroid and intensity.py  # Step 2: Calculate SI
-└── Histogram maker single video.py     # Step 3: Compare conditions
+├── Histogram maker single video.py     # Step 3: Compare conditions
+└── data/                               # Experimental data directory
+    ├── README.md                       # Data organization guide
+    ├── raw_data/                       # Raw centroid CSV files
+    ├── processed_data/                 # Processed SI results
+    └── example_data/                   # Example datasets
 ```
 
 ## 🔬 Scientific Background
