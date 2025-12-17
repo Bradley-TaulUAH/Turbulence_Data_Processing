@@ -1,76 +1,92 @@
-# Instructions to Update needed-code Branch
+# Branch Status and Recommendations
 
-The Python files and requirements.txt have been prepared and are ready to be added to the `needed-code` branch.
+## ✅ Status Update (December 2024)
 
-## Current Status
+**All Python files and requirements.txt have been successfully merged to the `main` branch via PR #2.**
 
-✅ The `copilot/add-python-and-text-files` branch contains:
-- All existing files from `needed-code`
-- **Histogram maker single video.py** (NEW - 10,191 bytes)
-- **requirements.txt** (NEW - 299 bytes)
+The files are now available in the main branch:
+- **Histogram maker single video.py** - Bootstrap SI distribution analysis
+- **requirements.txt** - Python package dependencies
+- All other Python scripts and documentation
 
-## Option 1: Fast-Forward Merge (Recommended)
+## Branch Recommendations
 
-Run these commands to update the `needed-code` branch:
+### `copilot/add-python-and-text-files` Branch
 
+This branch has been **successfully merged to main** and can be:
+- **Renamed** to `add-python-and-text-files` (to remove "copilot" from the name)
+- **Deleted** (since its contents are now in main)
+
+**To rename the branch** (if you want to keep it for reference):
 ```bash
-git fetch origin
-git checkout needed-code
-git merge --ff-only origin/copilot/add-python-and-text-files
-git push origin needed-code
+# Rename locally
+git branch -m copilot/add-python-and-text-files add-python-and-text-files
+
+# Delete old remote branch and push new one
+git push origin --delete copilot/add-python-and-text-files
+git push origin add-python-and-text-files
 ```
 
-## Option 2: Direct Branch Update
-
-If you want to directly update `needed-code` to match `copilot/add-python-and-text-files`:
-
+**To delete the branch** (recommended, since it's already merged):
 ```bash
-git fetch origin
-git checkout needed-code
-git reset --hard origin/copilot/add-python-and-text-files
-git push --force origin needed-code
+# Delete from GitHub
+git push origin --delete copilot/add-python-and-text-files
+
+# Delete locally if checked out
+git branch -d copilot/add-python-and-text-files
 ```
 
-## Option 3: Using GitHub Web UI
+### `needed-code` Branch
 
-1. Go to: https://github.com/Bradley-TaulUAH/Turbulence_Data_Processing
-2. Navigate to Pull Requests
-3. Find PR #2
-4. Change the base branch from `main` to `needed-code`
-5. Merge the PR
+The `needed-code` branch is **no longer necessary** because:
+- All files have been merged to `main`
+- The main branch is now the source of truth
+- Keeping it may cause confusion
 
-## Files Added
+**Recommended action: Delete the `needed-code` branch**
+```bash
+git push origin --delete needed-code
+```
 
-### Histogram maker single video.py
-- Complete histogram generation script with bootstrap SI distribution analysis
-- 278 lines of Python code
-- Includes functions for:
-  - Bootstrap SI distribution calculation
-  - Intensity trace loading
-  - Histogram plotting with confidence intervals
+## Historical Context
 
-### requirements.txt
-- 18 Python package dependencies:
-  - av==14.1.0
-  - numpy==1.26.4
-  - opencv-python==4.10.0.84
-  - matplotlib==3.10.0
-  - pandas==2.2.3
-  - scipy==1.14.1
-  - And 12 more dependencies
+### What Was Done (Option 3: Used GitHub Web UI - Completed)
+
+PR #2 was created and merged using GitHub's web interface:
+1. ✅ Went to: https://github.com/Bradley-TaulUAH/Turbulence_Data_Processing
+2. ✅ Created PR #2 with base branch `main`
+3. ✅ Merged the PR on December 17, 2024
+
+
+## Files in Main Branch
+
+All files are now available in the `main` branch:
+
+### Python Scripts
+- **Centroid tracker updated.py** - Laser spot centroid tracking
+- **Combined centroid and intensity.py** - Scintillation index calculation
+- **Histogram maker single video.py** - Bootstrap SI distribution analysis (278 lines)
+
+### Configuration
+- **requirements.txt** - 18 Python package dependencies (numpy, opencv-python, matplotlib, pandas, scipy, etc.)
+
+### Documentation
+- **README.md** - Project overview and quick start
+- **QUICKSTART.md** - Detailed tutorial
+- **ENVIRONMENT_SETUP.md** - Installation guide
+- **UPDATE_NEEDED_CODE_BRANCH.md** - This file (historical reference)
 
 ## Verification
 
-After updating `needed-code`, verify with:
+Verify files are in main:
 
 ```bash
-git checkout needed-code
-ls -la *.py *.txt
+git checkout main
+ls -la *.py *.txt *.md
 ```
 
-You should see 7 files total:
-- Centroid tracker updated.py
-- Combined centroid and intensity.py
-- Histogram maker single video.py ← NEW
-- requirements.txt ← NEW
-- Plus documentation files
+## Summary
+
+✅ **All files successfully merged to main**  
+✅ **`copilot/add-python-and-text-files` can be renamed or deleted**  
+✅ **`needed-code` branch is no longer needed and can be deleted**
